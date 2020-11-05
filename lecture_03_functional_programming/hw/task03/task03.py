@@ -1,6 +1,6 @@
 # I decided to write a code that generates data filtering object from a list of keyword parameters:
 
-class Filter():
+class Filter:
     """
         Helper filter class. Accepts a list of single-argument
         functions that return True if object in list conforms to some criteria
