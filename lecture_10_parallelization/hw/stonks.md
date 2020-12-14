@@ -25,3 +25,5 @@ https://markets.businessinsider.com/index/components/s&p_500
 ...
 ]
 ```
+For scrapping you cans use `beautifulsoup4` <br>
+For requesting `aiohttp`
