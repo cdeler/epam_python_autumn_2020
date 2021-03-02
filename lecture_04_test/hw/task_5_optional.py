@@ -18,7 +18,7 @@ Definition of done:
 * https://en.wikipedia.org/wiki/Fizz_buzz
 ** https://www.youtube.com/watch?v=NSzsYWckGd4
 """
-from typing import List, Generator
+from typing import Generator, List
 
 
 def fizzbuzz(n: int) -> Generator[str]:

@@ -16,8 +16,11 @@ Write a function that detects if a number is Armstrong number in functionaly sty
 
 ### Example function signature and call
 """
+
+
 def is_armstrong(number: int) -> bool:
     ...
-  
-assert is_armstrong(153) == True, 'Is Armstrong number'
-assert is_armstrong(10) == False, 'Is not Armstrong number'
+
+
+assert is_armstrong(153) == True, "Is Armstrong number"
+assert is_armstrong(10) == False, "Is not Armstrong number"

@@ -20,7 +20,7 @@ class User:
     pass
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 
     User.get_created_instances()  # 0
     user, _, _ = User(), User(), User()

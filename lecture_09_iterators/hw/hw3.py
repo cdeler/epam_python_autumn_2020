@@ -11,7 +11,7 @@ For dir with two files from hw1.py:
 
 """
 from pathlib import Path
-from typing import Optional, Callable
+from typing import Callable, Optional
 
 
 def universal_file_counter(
