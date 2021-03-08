@@ -226,12 +226,10 @@ Qestions:
 - Tests on which level is more complex?
 - Tests on which level has more reason to break?
 
-
 ## What test qualities we expect?
 
 - independent, one test does not affect others
 - informative, you can understand a case covered by the test  
-
 
 ## How we group tests
 - Positive, sunny, critical path
@@ -240,7 +238,6 @@ Qestions:
   You test how you code handle bad things, like good message is provided when you put wrong data,
   or you code failed instead of providing any result.
 
-
 ## Tests are code but require different approach
 
 - Test name can be long and descriptive, you never call it manually
@@ -248,7 +245,6 @@ Qestions:
 - Make linter less strict for tests
 - Treat them as code, review and maintain them
 - Test are should be flat, no condition check looks should be used
-
 
 ## What should be tested
 
@@ -283,6 +279,7 @@ lets split it to groups and check one candidate per group.
 - exception is raised
 - exception raised with proper message
 
+--- 
 
 ## How to structure individual tests
 
@@ -315,8 +312,9 @@ def test_constuctor_call_produces_object():
 - Test is more complex, it's easier to have a mistake (Do you see it?)
 - One test depends on other (if one of them failed other is not checked)
 
+---
 
-## How to name you tests
+## How to name your tests
 
 Test is a documentation of your code, name it according what are you doing.
 ### bad
@@ -339,6 +337,8 @@ test_years_divisible_by_4_but_not_by_100_are_leap_years
 test_years_divisible_by_100_but_not_by_400_are_not_leap_years
 test_years_divisible_by_400_are_leap_years
 ```
+
+--- 
 
 ## Keep it simple
 It should be easy to understand what is going in and out.
@@ -369,8 +369,7 @@ assert find_maximal_subarray_sum([1, 2, 2], 10) == 6
 - "ostolop" [good example](https://en.wikipedia.org/wiki/List_of_accounting_roles#Junior_accountant)
 - "АВС" [good example](https://en.wikipedia.org/wiki/Lorem_ipsum)
 
-## Pytest and fixtures
-[slides](02_pytest.md)
+---
 
 
 ## Test doubles: Mock and Spy 
@@ -402,9 +401,17 @@ mock.method()
 mock.method.assert_called()
 ```
 
+---
+
+## Pytest and fixtures
+[slides](02_pytest.md)
+
+---
+
 ## Typical errors
 [slides](03_typical_errors.md)
 
+---
 
 ## doctest
 Test and documentation together. Always actual.
@@ -424,6 +431,8 @@ def is_even(num):
 
     return num % 2 == 0
 ```
+
+---
 
 ## Coverage 
 Simple metrics which code was executed during test run.
@@ -469,12 +478,11 @@ In the most homeworks coverage 100% is expected.
 | Coverage changes since previous | important    | useful      |
 | Coverage detailed report        | important    | useless      |
 
+--- 
+
 ## Debug
 
 - debug prints
 - debug in Pycharm  (https://www.youtube.com/watch?v=sRGpvbhOhQs)
 - debug with console
-- remote debug (Pycharm pro, Eclipse)
-
-
-
+- remote debug (PyCharm pro, Eclipse)
