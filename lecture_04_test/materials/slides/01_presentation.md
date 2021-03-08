@@ -14,7 +14,7 @@ but:
 - This code will be thrown away soon 
   - Challenge solving on www.haccerrank.com,  www.leetcode.com, etc
   - Code that runs once
-  - Code that does not require quality: prototypes, POC(proof of concept) 
+  - Code that does not require quality: prototypes, POC (proof of concept) 
 - Technical code that has a single purpose and run automatically
   - Automation scripts
 
@@ -25,7 +25,7 @@ but:
 - To be sure that your code do what you ask it to do (finding bug is a side effect)
 - Get fast and precise feedback 
 - Improve speed of introducing changes
-- Reduce time spent in dubugging
+- Reduce time spent in debugging
 - Remove fear of changes
 - Force you to have an architecture (boundaries management)
 - You think what you write 
@@ -35,13 +35,13 @@ but:
 
 ## How?
 
-- Test are first class Citizens
-  It is a part of the project as important as code, deployment and configuration.   
+- Tests are first class Citizens,
+  it is a part of the project as important as code, deployment and configuration
 - Rules for writing code and tests are different
-- Write code with tests in mind
-  If your code is in untestable shape it will be a pain to test it.
-- Start writing tests from the beginning. Don't way a miracle that say it's time to write tests.
-  
+- Write code with tests in mind,
+  if your code is in untestable shape it will be a pain to test it
+- Start writing tests from the beginning. 
+  Don't wait a miracle that says it's time to write tests!
 
 ---
 
@@ -75,8 +75,8 @@ but:
 
 </details>
  
-Don't try to write test that fits into multiple categories at once. They will be bad at all of them.
-
+Don't try to write test that fits into multiple categories at once. 
+They will be bad in all of them.
 
 ## What is unit stands for?
 
@@ -88,7 +88,7 @@ Don't try to write test that fits into multiple categories at once. They will be
 - service
 
 Unit is a chunk of code that can be tested.
-No global definition, need to define it for each project.
+No global definition need to define it for each project.
 
 ## A test is not a unit test if:
 - It talks to the database
@@ -105,7 +105,7 @@ Many easy and fast tests, less slow and complicated tests.
 
 ![https://martinfowler.com/articles/practical-test-pyramid.html](img/test_pyramid.png)
 
-## Lets se an example
+## Let's have the example
 Issue in a module fails each dependent module.
 
 - Module 6 is on level 1 and has 0 dependencies
@@ -118,7 +118,9 @@ On which level it is better to catch error in module 6?
 
 ## Example with code
 
-We have a feature that accepts an image, detect its attributes and provides an info about image. To test each case we need to provide an image.
+We have a feature that accepts an image, 
+detects its attributes and provides an info about image.
+To test each case we need to provide a separate image.
 
 We wrote a bunch of functions:
 - First level `get_color` and `get_shape` 
@@ -158,19 +160,20 @@ We want to test all positive scenarious, so we provide an image for each possibl
 | get_image_info  | 6     | 
 | **Total:**      | **6** |
   
-## Test from bottom (test pyramid)
+## Test from the bottom (test pyramid)
 
 - `get_color` gives us 3 test and 3 images,
    we test that color was detected
     - test_red
     - test_blue
     - test_green
-- `get_shape` us 2 test and 2 images,
+- `get_shape` gives us 2 test and 2 images,
   we test that shape was detected
     - test_box
     - test_cycle
 - `get_image_info` gives us 1 test 1 image, 
-   we test what `get_color` and `get_shape` and return value is properly formed. Actually you need 0 images, because you mock level 1 calls
+   we test that `get_color` and `get_shape` returned value is properly formed.
+   Actually you need 0 images, because you mock level 1 calls
     - test_image_info
 
 | Function        | Tests | 
@@ -190,7 +193,7 @@ def get_color(img) -> str:
 
 - Test from the top
     - 4 * 2 -> 8 test 
-- Test from bottom
+- Test from the bottom
     - 4 + 2 + 1 -> 7 tests
   
 | Function        | Top      | Bottom 
@@ -209,7 +212,7 @@ def get_color(img) -> str:
 
 - Test from the top
     - 2 test changes 
-- Test from bottom
+- Test from the bottom
     - 1 test changes
 
 | Function        | Top changed      | Bottom changed 
@@ -220,11 +223,11 @@ def get_color(img) -> str:
 | **Total changed:**      | **2**    | **1**
 
 
-Qestions:
+Questions:
 
-- Tests on which level is more independent of others?
-- Tests on which level is more complex?
-- Tests on which level has more reason to break?
+- Tests on which level are more independent of others?
+- Tests on which level are more complex?
+- Tests on which level have more reason to break?
 
 ## What test qualities we expect?
 
@@ -232,11 +235,12 @@ Qestions:
 - informative, you can understand a case covered by the test  
 
 ## How we group tests
-- Positive, sunny, critical path
-  This the first test you write, thy check that feature you want works.  
-- Negative 
-  You test how you code handle bad things, like good message is provided when you put wrong data,
-  or you code failed instead of providing any result.
+- Positive, sunny, critical path.
+  These are the first tests you write, they check that feature you want works.  
+- Negative. 
+  You test how your code handles bad things, 
+  like good message is provided when you put wrong data,
+  or your code failed instead of providing any result.
 
 ## Tests are code but require different approach
 
@@ -244,7 +248,7 @@ Qestions:
 - Input and expected values for each test are different even if they look the same, don't extract them to common variables 
 - Make linter less strict for tests
 - Treat them as code, review and maintain them
-- Test are should be flat, no condition check looks should be used
+- Test should be flat, no condition check or loops should be used
 
 ## What should be tested
 

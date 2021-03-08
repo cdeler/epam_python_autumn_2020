@@ -1,7 +1,7 @@
-## Testing with python
-There is 2 major tools for testing `unittest` and `pytest`.
+## Testing with Python
+There are 2 major tools for testing `unittest` and `pytest`.
 
-De facto pytest is a standard in Python testing. `pytest` can do everything what can do unittest and even more.
+De facto pytest is a standard in Python testing. `pytest` can do everything what can do `unittest` and even more.
 
 ### Unittest vs pytest
 - pytest asserts are more informative
@@ -59,14 +59,14 @@ def test_ehlo(smtp_connection):
 
 ## What pytest do after you run it
 
-- Collect fixtures
-- Collect tests
-- Execute fixtures required for test
-- Run tests and pass result of fixture execution to it 
-- Show reports
+- Collects fixtures
+- Collects tests
+- Executes fixtures required for test
+- Runs tests and pass result of fixture execution to it 
+- Shows reports
 
 ## Fixture scopes
-You can shoose how often fixture is executed
+You can choose how often fixture is executed
 
 - `function` (default, recommended), every time before test
 - `class`, once for each test in class
@@ -107,18 +107,18 @@ def user_john(name):
 
 ## Built-in fixtures
 
-- caplog Control logging and access log entries.
-- capsys Capture, as text, output to sys.stdout and sys.stderr.
-- monkeypatch Temporarily modify classes, functions, dictionaries, os.environ, and other objects.
-- pytestconfig Access to configuration values, pluginmanager and plugin hooks.
-- request Provide information on the executing test function.
-- testdir Provide a temporary test directory to aid in running, and testing, pytest plugins.
-- tmp_path Provide a pathlib.Path object to a temporary directory which is unique to each test function.
+- `caplog` controls logging and access log entries.
+- `capsys` captures, as text, output to sys.stdout and sys.stderr.
+- `monkeypatch` temporarily modifies classes, functions, dictionaries, os.environ, and other objects.
+- `pytestconfig` access to configuration values, pluginmanager and plugin hooks.
+- `request` provides information on the executing test function.
+- `testdir` provides a temporary test directory to aid in running, and testing, pytest plugins.
+- `tmp_path` provides a pathlib. Path object to a temporary directory which is unique to each test function.
 - [and others](https://docs.pytest.org/en/stable/fixture.html)
 
 ## monkeypatch
 
-Modify your environment to before the test, get it cleaned after automatically.
+Modifies your environment to before the test, get it cleaned after automatically.
 
 - monkeypatch.setattr(obj, name, value, raising=True)
 - monkeypatch.delattr(obj, name, raising=True)

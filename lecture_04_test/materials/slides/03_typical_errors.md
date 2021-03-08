@@ -30,9 +30,9 @@ def test_user_...():
 
 ## Test coupling
 
-If you run a single test it will fail
-If you run test in different order some will fail
-If you try to parallelize test running they will fail from time to time
+If you run a single test it will fail.
+If you run test in different order some will fail.
+If you try to parallelize test running they will fail from time to time.
 
 ```python
 state = True
@@ -75,7 +75,7 @@ def test_negative_integer_raises_and_error():
 ```
 
 ## Assert nothing
-This check that code does not produce an exception
+This checks that code does not produce an exception
 
 ```python
 def test_fibonacci():
