@@ -465,7 +465,7 @@ There is 2 metrics that can be used:
 coverage percent, and coverage changes.
 
 The first one is easy to measure and as useful as SLOC (Source lines of code).
-For example 30% coverage of critical code is better than 70% of nit critical code.
+For example 30% coverage of critical code is better than 70% of non-critical code.
 
 100% is a goal, but it is almost impossible to achieve. 
 Just look to the detailed report and check what is missing.
