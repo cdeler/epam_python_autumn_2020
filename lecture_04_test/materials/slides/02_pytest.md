@@ -96,11 +96,11 @@ You can pass fixture not only in test, but also in another fixture.
 import pytest
 
 
-@pytest.fixture
+@pytest.fixture()
 def john():
     return "John"
 
-@pytest.fixture
+@pytest.fixture()
 def user_john(john):
     return User(name)
 ```
@@ -159,7 +159,7 @@ def test_boo():
 import pytest
 
 
-@pytest.fixture
+@pytest.fixture()
 def connection():
     con = get_connection()
     yield con
@@ -203,7 +203,7 @@ import pytest
 @pytest.mark.parametrize("color", ["red", "green"])
 @pytest.mark.parametrize("shape", ["box", "circle"])
 def test_shape(shape, color):
-    assert True
+    ...
 ```
 
 ```
@@ -225,7 +225,7 @@ All in one, you don't help reader to understand cases behind this inputs.
 
 ```python
 @pytest.mark.parametrize(
-    ["value", "expected_result"],
+    ("value", "expected_result"),
     [
         ([0, 1, 1, 2], True),
         ([], False),
@@ -266,7 +266,7 @@ def test_sequence_is_not_fibonacci(value: Sequence[int]):
     assert check_fibonacci(value) is False
 
     
-def test_empty_sequence_is_fibonacci():
+def test_empty_sequence_is_not_fibonacci():
     assert check_fibonacci([]) is False
 ```
 
