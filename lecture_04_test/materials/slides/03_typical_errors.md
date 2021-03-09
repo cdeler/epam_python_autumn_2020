@@ -55,23 +55,23 @@ You can have couple of cases:
 - Test is wrong and function is not tested.
 
 ```python
-def is_positive(text: int):
-    if text == 0:
-        raise ValueError("undefined is not a number")
+def is_positive(text: str):
+    if int(text) == 0:
+        raise ValueError("Positive number required")
 ```
 
 ### bad
 ```python
 def test_negative_integer_raises_and_error():
     with pytest.raises(ValueError):
-        is_positive("-1")
+        is_positive("a")
 ```
 
 ### good
 ```python
 def test_negative_integer_raises_and_error():
     with pytest.raises(ValueError, match="Positive number required"):
-        is_positive("-1")
+        is_positive("a")
 ```
 
 ## Assert nothing
@@ -151,12 +151,12 @@ def test_file():
 ## bad
 ```python
 
-def is_posistive(n):
+def is_positive(n):
     return True if n else False
 
 def test_is_positive__reuse_code():
-    expected = is_posistive(-1)
-    assert is_posistive(-1) == expected
+    expected = is_positive(-1)
+    assert is_positive(-1) == expected
    
     
 def test_is_positive__copy_code():
@@ -164,13 +164,13 @@ def test_is_positive__copy_code():
         return True if num else False
     
     expected = _get_expected_value(-1)
-    assert is_posistive(-1) == expected
+    assert is_positive(-1) == expected
 ```
 
 ## good
 ```python
 def test_negative_value_is_false():
-    assert is_posistive(-1) is False
+    assert is_positive(-1) is False
 ```
 
 ## Test generation inside test

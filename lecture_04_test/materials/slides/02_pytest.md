@@ -101,7 +101,7 @@ def john():
     return "John"
 
 @pytest.fixture
-def user_john(name):
+def user_john(john):
     return User(name)
 ```
 
@@ -147,7 +147,7 @@ def test_boo_with_monkeypatch(monkeypatch):
     assert boo(1) == 3
 
 
-def test_boo(monkeypatch):
+def test_boo():
     assert boo(1) == 2
 ```
 
