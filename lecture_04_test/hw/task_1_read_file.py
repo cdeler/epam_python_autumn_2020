@@ -6,7 +6,8 @@ and false otherwise.
 In case of any error, a ValueError should be thrown.
 
 Write a test for that function using pytest library.
-You should not use any existing file on disc and create files inside tests.
+You should create files required for the testing inside the test run and remove them after the test run.
+(Opposite to previous homeworks when you reused files created manually before the test.)
 
 Definition of done:
  - function is created
