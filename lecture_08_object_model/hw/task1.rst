@@ -2,7 +2,7 @@ Homework 1:
 ============
 
 
-We have a file that works as key-value storage, each like is represented as key and value separated by = symbol, example:
+We have a file that works as key-value storage, each line is represented as key and value separated by = symbol, example:
 
 name=kek
 last_name=top
