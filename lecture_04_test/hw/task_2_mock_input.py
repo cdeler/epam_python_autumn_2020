@@ -12,6 +12,7 @@ Definition of done:
  - function is created
  - function is properly formatted
  - function has positive and negative tests
+ - test could be run without internet connection
 
 You will learn:
  - how to test using mocks

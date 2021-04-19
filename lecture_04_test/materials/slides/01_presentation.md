@@ -17,6 +17,7 @@ but:
   - Code that does not require quality: prototypes, POC (proof of concept) 
 - Technical code that has a single purpose and run automatically
   - Automation scripts
+  - Tests themselves
 
 ---
  
@@ -29,13 +30,13 @@ but:
 - Remove fear of changes
 - Force you to have an architecture (boundaries management)
 - You think what you write 
-- Tests are code documentation
+- Tests are code documentation (good tests)
 
 ---
 
 ## How?
 
-- Tests are first class Citizens,
+- Tests are first class citizens,
   it is a part of the project as important as code, deployment and configuration
 - Rules for writing code and tests are different
 - Write code with tests in mind,
@@ -61,7 +62,7 @@ but:
 
 - Functional
   - Unittest (we are talking about them today)
-  - Not unittests: component, servce, integration, end-to-end
+  - Not unittests: component, service, integration, end-to-end
 </details>
 
 
@@ -134,6 +135,7 @@ def get_color(img) -> str:
 def get_shape(img) -> bool:
     """Return one of shapes: Box, Circle."""
 
+    
 def get_image_info(img):
     shape = get_shape(img)
     color = get_color(img)
@@ -332,7 +334,6 @@ test_is_leap_year
 
 Describe initial state, describe your action, describe expected result.
 Hint, test name is constructed form file, class and method or function.
-You can put 
 
 ### Good
 ```
@@ -384,8 +385,8 @@ Mock and MagicMock objects create all attributes and methods as you access them 
 from unittest.mock import MagicMock
 thing = ProductionClass()
 thing.method = MagicMock(return_value=3)
-thing.method(3, 4, 5, key='value')
-
+result = thing.method(3, 4, 5, key='value')
+assert  result == 3
 thing.method.assert_called_with(3, 4, 5, key='value')
 ```
 
@@ -398,11 +399,13 @@ thing.method.assert_called_with(3, 4, 5, key='value')
 - assert_has_calls(calls, any_order=False)
 - assert_not_called()
 
+ 
 ```python
 mock = Mock()
-mock.method()
+mock.method("hello")
 
-mock.method.assert_called()
+mock.method.assert_called_once()
+mock.method.assert_called_with("hello")
 ```
 
 ---
@@ -435,6 +438,11 @@ def is_even(num):
 
     return num % 2 == 0
 ```
+
+Doctests vs unittest:
+There is not strict rule, but if doctest does not fit on one line,
+probably you should think about writing unit test.
+
 
 ---
 

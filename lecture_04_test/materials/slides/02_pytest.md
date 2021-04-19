@@ -4,8 +4,8 @@ There are 2 major tools for testing `unittest` and `pytest`.
 De facto pytest is a standard in Python testing. `pytest` can do everything what can do `unittest` and even more.
 
 ### Unittest vs pytest
-- pytest asserts are more informative
-- pytest does not require writing test classes
+- pytest asserts are a bit more informative
+- pytest does not require writing test classes (you still can if you want)
 - pytest fixtures are more flexible that setUp and tearDown
 - pytest has plugins
 - pytest is more widely used
@@ -17,7 +17,7 @@ The pytest framework makes it easy to write small tests, yet scales to support c
 
 **pytest** will run all files of the form `test_*.py` or `*_test.py` in the current directory and its subdirectories. 
 
-More generally, it follows standard test discovery rules.  
+More generally, it follows standard test discovery rules for unittests.  
 
 
 ## pytest fixtures: explicit, modular, scalable
@@ -102,7 +102,7 @@ def john():
 
 @pytest.fixture()
 def user_john(john):
-    return User(name)
+    return User(john)
 ```
 
 ## Built-in fixtures
@@ -150,6 +150,9 @@ def test_boo_with_monkeypatch(monkeypatch):
 def test_boo():
     assert boo(1) == 2
 ```
+
+This is alternative for using [unittest.mock.patch]https://docs.python.org/3/library/unittest.mock.html#unittest.mock.patch
+
 
 ## Fixture instead of setUp and tearDown
 
