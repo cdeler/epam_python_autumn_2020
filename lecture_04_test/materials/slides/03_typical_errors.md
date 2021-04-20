@@ -187,17 +187,3 @@ def test_is_positive():
 ```
 
 Split to separate tests, use test generation `pytest.mark.parametrize`. 
-
-### bad
-```python
-def test_is_positive():
-    res = is_positive(-1)
-    if not res:
-        assert False
-```
-
-### good
-```python
-def test_is_positive():
-    assert is_positive(-1) is False
-```
