@@ -14,8 +14,7 @@ You will learn:
  - how to run doctests
 
 
->>> fizzbuzz(5)
-["1", "2", "fizz", "4", "buzz"]
+assert fizzbuzz(5) == ["1", "2", "fizz", "4", "buzz"]
 
 * https://en.wikipedia.org/wiki/Fizz_buzz
 ** Энциклопедия профессора Фортрана page 14, 15, "Робот Фортран, чисть картошку!"
