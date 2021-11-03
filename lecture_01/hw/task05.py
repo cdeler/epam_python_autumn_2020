@@ -13,4 +13,15 @@ from typing import List
 
 
 def find_maximal_subarray_sum(nums: List[int], k: int) -> int:
-    ...
+    assert k > 0, "k - is natural number"
+    max_sum = float("-inf")
+    for i in range(len(nums)):
+        start_sum = 0
+        local_sums = []  # array with part sums of slice
+        for j in nums[i : i + k]:
+            start_sum += j
+            local_sums.append(start_sum)
+        if max(local_sums) > max_sum:
+            max_sum = max(local_sums)
+
+    return max_sum
