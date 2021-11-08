@@ -21,6 +21,46 @@ def test_positive_case_2():
     assert check_sum_of_four(a, b, c, d) == result
 
 
+def test_positive_case_3():
+    """Testing with correct arrays"""
+    a = [2, 1]
+    b = [2, 5]
+    c = [1, -2]
+    d = [-4, 5]
+    result = 2
+    assert check_sum_of_four(a, b, c, d) == result
+
+
+def test_positive_case_4():
+    """Testing with correct arrays"""
+    a = [1, 2, 3]
+    b = [4, 5, 6]
+    c = [-7, -8, -9]
+    d = [0, -1, -2]
+    result = 10
+    assert check_sum_of_four(a, b, c, d) == result
+
+
+def test_positive_case_5():
+    """Testing with correct arrays"""
+    a = []
+    b = []
+    c = []
+    d = []
+    result = 0
+    assert check_sum_of_four(a, b, c, d) == result
+
+
+def test_positive_case_6():
+    """Testing with correct arrays"""
+    a = [i for i in range(1000)]
+    b = [i for i in range(1000)]
+    c = [i for i in range(1000)]
+    d = [i for i in range(1000)]
+    result = 0
+    assert check_sum_of_four(a, b, c, d) == result
+
+
 def test_negative_case():
     """Testing that 2 gives True"""
     a = [1, 2]

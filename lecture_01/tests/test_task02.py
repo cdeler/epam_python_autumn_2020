@@ -2,7 +2,7 @@ from hw.task02 import check_fibonacci
 
 
 def test_positive_case():
-    """Testing that correcr list gives True"""
+    """Testing that correct list gives True"""
     data_to_process = [
         0,
         1,
@@ -29,9 +29,45 @@ def test_positive_case():
     assert check_fibonacci(data_to_process)
 
 
-def test_negative_case():
+def test_negative_case1():
     """Testing that wrong list gives False"""
     data_to_process = [0, 1, 1, 5]
+    assert not check_fibonacci(data_to_process)
+
+
+def test_negative_case2():
+    """
+    Testing that wrong list gives False
+    but list passes condition list[0] + list[1] = list[2]
+    """
+    data_to_process = [10, 20, 30, 50, 80, 130, 210]
+    assert not check_fibonacci(data_to_process)
+
+
+def test_negative_case3():
+    """Testing that list  of negative numbers gives False"""
+    data_to_process = [
+        -30,
+        -50,
+        -100,
+        -101,
+        -102,
+    ]
+    assert not check_fibonacci(data_to_process)
+
+
+def test_negative_case4():
+    """
+    Testing that list  of negative numbers gives False
+    but list passes condition list[0] + list[1] = list[2]
+    """
+    data_to_process = [
+        -1,
+        -1,
+        -2,
+        -3,
+        -5,
+    ]
     assert not check_fibonacci(data_to_process)
 
 
@@ -44,9 +80,3 @@ def test_case_len_less_3():
         pass
     else:
         assert False
-
-
-def test_wrong_value_type():
-    """Testing that wrong value type give False"""
-    data_to_process = "abc"
-    assert not check_fibonacci(data_to_process)
