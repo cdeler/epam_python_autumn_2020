@@ -14,11 +14,13 @@ def check_sum_of_four(a: List[int], b: List[int], c: List[int], d: List[int]) ->
 
     amount = 0
 
-    sublist_ab = [i+j for i in a for j in b]  # the list with combination of sum of numbers in list a and b
+    sublist_ab = [
+        i + j for i in a for j in b
+    ]  # the list with combination of sum of numbers in list a and b
     sublist_ab.sort()
-    sublist_cd = [i+j for i in c for j in d]  # ... in list c and d
+    sublist_cd = [i + j for i in c for j in d]  # ... in list c and d
     sublist_cd.sort()
-    print(sublist_ab, '\n', sublist_cd)
+    print(sublist_ab, "\n", sublist_cd)
 
     len_arr = len(sublist_ab)  # initiliaze the array's size
     i = 0
@@ -28,13 +30,13 @@ def check_sum_of_four(a: List[int], b: List[int], c: List[int], d: List[int]) ->
         if sublist_ab[i] + sublist_cd[j] == 0:
             ab = 1
             cd = 1
-            while (i != len_arr - 1) and sublist_ab[i] == sublist_ab[i+1]:
+            while (i != len_arr - 1) and sublist_ab[i] == sublist_ab[i + 1]:
                 ab += 1
                 i += 1
-            while j != 0 and sublist_cd[j] == sublist_cd[j-1]:
+            while j != 0 and sublist_cd[j] == sublist_cd[j - 1]:
                 cd += 1
                 j -= 1
-            amount += ab*cd
+            amount += ab * cd
             i += 1
             j -= 1
         elif sublist_ab[i] + sublist_cd[j] > 0:
