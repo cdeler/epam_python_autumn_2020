@@ -57,7 +57,7 @@ def test_positive_case_6():
     b = [i for i in range(1000)]
     c = [i for i in range(1000)]
     d = [i for i in range(1000)]
-    result = 0
+    result = 1
     assert check_sum_of_four(a, b, c, d) == result
 
 
